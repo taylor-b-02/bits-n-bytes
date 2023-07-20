@@ -47,4 +47,4 @@ const routes = require('./routes');
 
 app.use(routes);
 
-modules.exports = app;
+module.exports = app;
