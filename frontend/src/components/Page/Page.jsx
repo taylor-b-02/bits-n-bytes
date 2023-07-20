@@ -27,6 +27,7 @@ export default function Page() {
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
+        className="modal-container"
       >
         <div className="modal">
           <h1 style={{ color: "var(--dark-primary" }}>
