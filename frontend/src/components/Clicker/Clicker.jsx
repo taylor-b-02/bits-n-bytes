@@ -1,9 +1,10 @@
 import {React} from 'react';
+import './Clicker.css';
 
 export default function Clicker() {
     return (
         <div className="clicker">
-            <p>Clicker</p>
+            <button>Please god click me...</button>
         </div>
     );
 }

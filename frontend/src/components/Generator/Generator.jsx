@@ -1,4 +1,5 @@
 import {React} from 'react';
+import './Generator.css';
 import GeneratorPhoto from '../GeneratorPhoto/GeneratorPhoto';
 import PurchaseButton from '../PurchaseButton/PurchaseButton';
 

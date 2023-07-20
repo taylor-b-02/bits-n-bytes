@@ -1,0 +1,21 @@
+.currency {
+    grid-column: 3 / span 1;
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.amount {
+    font-size: 1rem;
+    font-family: 'Tektur', cursive;
+    color: var(--light-primary);
+    border-radius: 5px;
+    width: 100px;
+    height: 30px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark-secondary);
+}
