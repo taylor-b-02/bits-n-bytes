@@ -1,4 +1,5 @@
 import {React} from 'react';
+import './Page.css';
 import Header from '../Header/Header';
 import Generators from '../Generators/Generators';
 import Clicker from '../Clicker/Clicker';
