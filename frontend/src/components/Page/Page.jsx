@@ -8,9 +8,9 @@ export default function Page() {
     return (
         <div className="page">
             <Header/>
-            {/* <Generators/>
+            <Generators/>
             <Clicker/>
-            <Upgrades/> */}
+            <Upgrades/>
         </div>
     );
 };
