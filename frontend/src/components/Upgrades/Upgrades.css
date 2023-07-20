@@ -1,0 +1,25 @@
+.upgrades {
+  grid-column: 3 / span 1;
+  grid-row: 2 / span 5;
+  border: 1px solid var(--dark-secondary);
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  direction:rtl;
+}
+
+.upgrades::-webkit-scrollbar {
+  width: 8px; /* Adjust the width of the scrollbar as needed */
+  border-radius: 3px;
+  position: absolute;
+            right: 0; /* Position the scrollbar on the right of the element*/
+}
+
+.upgrades::-webkit-scrollbar-track {
+  background-color: var(--dark-primary); /* Adjust the track color as needed */
+}
+
+.upgrades::-webkit-scrollbar-thumb {
+  background-color: #386c34; /* Adjust the thumb color as needed */
+}

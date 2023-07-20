@@ -5,7 +5,6 @@
   border-radius: 3px;
   display: flex;
   flex-direction: column;
-  padding: 10px;
   overflow-y: auto;
 }
 
@@ -15,7 +14,7 @@
 }
 
 .generators::-webkit-scrollbar-track {
-  background-color: #eee; /* Adjust the track color as needed */
+  background-color: var(--dark-primary); /* Adjust the track color as needed */
 }
 
 .generators::-webkit-scrollbar-thumb {
