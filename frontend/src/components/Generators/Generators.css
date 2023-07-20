@@ -1,0 +1,23 @@
+.generators {
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 5;
+  border: 1px solid var(--dark-secondary);
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.generators::-webkit-scrollbar {
+  width: 8px; /* Adjust the width of the scrollbar as needed */
+  border-radius: 3px;
+}
+
+.generators::-webkit-scrollbar-track {
+  background-color: #eee; /* Adjust the track color as needed */
+}
+
+.generators::-webkit-scrollbar-thumb {
+  background-color: #386c34; /* Adjust the thumb color as needed */
+}

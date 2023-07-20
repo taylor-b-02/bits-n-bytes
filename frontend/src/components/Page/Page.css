@@ -6,4 +6,5 @@
   grid-template-rows: repeat(6, 1fr);
   background-color: var(--dark-primary);
   font-family: "Roboto Slab", serif;
+  gap: 10px;
 }

@@ -1,4 +1,5 @@
 import {React} from 'react';
+import './PurchaseButton.css';
 
 export default function PurchaseButton() {
     return (
