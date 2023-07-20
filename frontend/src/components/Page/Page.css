@@ -8,3 +8,8 @@
   font-family: "Roboto Slab", serif;
   gap: 10px;
 }
+
+.modal {
+  width: 50%;
+  height: 50%;
+}

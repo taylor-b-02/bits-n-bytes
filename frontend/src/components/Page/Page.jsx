@@ -6,18 +6,16 @@ import Clicker from "../Clicker/Clicker";
 import Upgrades from "../Upgrades/Upgrades";
 
 //Modal imports
-import ReactDOM from "react-dom";
 import Modal from "react-modal";
 
 Modal.setAppElement("#root");
 
 export default function Page() {
-  let subtitle;
   const [modalIsOpen, modalSetIsOpen] = useState(true);
 
   function afterOpenModal() {
     // references are now sync'd and can be accessed.
-    subtitle.style.color = "#f00";
+    console.log("Modal is open");
   }
 
   function closeModal() {
@@ -29,19 +27,22 @@ export default function Page() {
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
-        contentLabel="Example Modal"
       >
-        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
-        <button onClick={closeModal}>close</button>
-        <form>
-          <label>Username </label>
-          <input />
-          <br />
-          <label>Password </label>
-          <input />
-          <br />
-          <button>Submit</button>
-        </form>
+        <div className="modal">
+          <h1 style={{ color: "var(--dark-primary" }}>
+            Bits <span style={{ color: "green" }}>&</span> Bytes
+          </h1>
+          <form>
+            <label>Username </label>
+            <input />
+            <br />
+            <label>Password </label>
+            <input />
+            <br />
+            <button>Submit</button>
+            <button onClick={closeModal}>close</button>
+          </form>
+        </div>
       </Modal>
       <Header />
       <Generators />
