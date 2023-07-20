@@ -4,5 +4,6 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(6, 1fr);
-  background-color: var(--dark-primary)
+  background-color: var(--dark-primary);
+  font-family: "Roboto Slab", serif;
 }

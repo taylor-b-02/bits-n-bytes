@@ -1,8 +1,8 @@
 :root {
   --dark-primary: #2B2B2B;
   --dark-secondary: #161616;
-  --white-primary: #eaeaea;
-  --white-secondary: #959595;
+  --light-primary: #eaeaea;
+  --light-secondary: #959595;
 }
 
 body {
