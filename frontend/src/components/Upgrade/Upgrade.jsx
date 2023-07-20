@@ -6,7 +6,6 @@ export default function Upgrade() {
     return (
         <div className="upgrade">
             <UpgradePhoto/>
-            I am an upgrade
             <PurchaseButton/>
         </div>
     );
