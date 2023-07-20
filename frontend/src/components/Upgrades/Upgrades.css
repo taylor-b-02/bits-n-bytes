@@ -7,6 +7,8 @@
   flex-direction: column;
   overflow-y: auto;
   direction:rtl;
+  height: 97%;
+  width: 97%;
 }
 
 .upgrades::-webkit-scrollbar {
