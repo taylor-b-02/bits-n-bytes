@@ -2,16 +2,22 @@
 
 Brief (two to three sentences max) overview of what the app is and what it does.
 
-## Live site
+## Live Site
 
-https://google.com/ - UPDATE
+https://google.com/ **- UPDATE 🚨**
 
-## Technologies used
+## Technologies Used
 
-- Frontend
-  - HTML, CSS, Javascript, React, Redux UPDATE
-- Backend
-  - Flask, SQLAlchemy, PostgreSQL, Alembic, Docker UPDATE
+- Frontend  **- UPDATE 🚨**
+  - HTML
+  - CSS
+  - Javascript
+  - React
+  - Redux
+- Backend  **- UPDATE 🚨**
+  - ExpressJS
+  - PostgreSQL
+  - Sequelize
 
 ## Screenshots
 
