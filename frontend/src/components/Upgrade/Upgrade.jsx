@@ -1,6 +1,6 @@
 import { React } from "react";
 import "./Upgrade.css";
-import PurchaseButton from "../PurchaseButton/PurchaseButton";
+import PurchaseUpgradeButton from "../PurchaseUpgradeButton/PurchaseUpgradeButton";
 import UpgradePhoto from "../UpgradePhoto/UpgradePhoto";
 
 export default function Upgrade() {
@@ -11,7 +11,7 @@ export default function Upgrade() {
         <h3>Upgrade Name</h3>
         <p>Upgrade Description</p>
       </div>
-      <PurchaseButton />
+      <PurchaseUpgradeButton />
     </div>
   );
 }
