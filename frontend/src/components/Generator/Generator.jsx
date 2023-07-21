@@ -11,7 +11,7 @@ export default function Generator(props) {
       <GeneratorPhoto />
       <div className="generator-container">
         <h3>{generator.name}</h3>
-        <p>{generator.cost}</p>
+        <p>{Math.floor(generator.cost)}</p>
       </div>
       <PurchaseButton
         generator={generator} 

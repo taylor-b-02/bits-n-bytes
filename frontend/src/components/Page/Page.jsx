@@ -34,15 +34,15 @@ export default function Page() {
   //when generators are bought they increase the count of their respective generator, affecting the cost of the next one
 
   //Defining the generators here
-  //name, cost, baseValue, baseMult, baseCostMult, baseCost, numOwned
-  let generator1 = new Gen("Generator 1", 1, 10, 1, 1, 1, 0);
-  let generator2 = new Gen("Generator 2", 100, 10, 1, 1, 1, 0);
-  let generator3 = new Gen("Generator 3", 1000, 100, 1, 1, 1, 0);
-  let generator4 = new Gen("Generator 4", 10000, 1000, 1, 1, 1, 0);
-  let generator5 = new Gen("Generator 5", 100000, 10000, 1, 1, 1, 0);
-  let generator6 = new Gen("Generator 6", 1000000, 100000, 1, 1, 1, 0);
-  let generator7 = new Gen("Generator 7", 10000000, 1000000, 1, 1, 1, 0);
-  let generator8 = new Gen("Generator 8", 100000000, 10000000, 1, 1, 1, 0);
+  //name, cost, baseValue, baseCost, count
+  let generator1 = new Gen("Generator 1", 10, 1, 1, 1);
+  let generator2 = new Gen("Generator 2", 100, 10, 1, 1);
+  let generator3 = new Gen("Generator 3", 1000, 100, 1, 1);
+  let generator4 = new Gen("Generator 4", 10000, 1000, 1, 1);
+  let generator5 = new Gen("Generator 5", 100000, 10000, 1, 1);
+  let generator6 = new Gen("Generator 6", 1000000, 100000, 1, 1);
+  let generator7 = new Gen("Generator 7", 10000000, 1000000, 1, 1);
+  let generator8 = new Gen("Generator 8", 100000000, 10000000, 1, 1);
   const [generators, setGenerators] = useState([
     generator1,
     generator2,
@@ -106,7 +106,9 @@ export default function Page() {
     console.log("currency changed");
   })
 
-  game(100, generators, generatorMult, globalMult, handleCurrencyChange);
+  //trying to figure out how to make the generators happen every X seconds, probs could just get time or make 
+  //a frame count etc. 
+  //game(100, generators, generatorMult, globalMult, handleCurrencyChange);
   return (
     <div className="page">
       <Modal
