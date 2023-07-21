@@ -95,7 +95,9 @@ export default function Page() {
           </form>
         </div>
       </Modal>
-      <Header />
+      <Header 
+        currency={currency}
+      />
       <Generators
         currency={currency}
         setCurrency={handleClick}
