@@ -1,8 +1,10 @@
 const router = require('express').Router();
+const sessionRouter = require('./session.js');
+const usersRouter = require('./users.js');
 
-router.get('/hi', function (req, res) {
-	res.send('Hi Everybody!');
-});
+// Connect routes from session and users routers
+router.use('/session', sessionRouter);
+router.use('/users', usersRouter);
 
 router.post('/test', function (req, res) {
 	res.json({ requestBody: req.body });

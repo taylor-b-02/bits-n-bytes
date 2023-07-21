@@ -33,10 +33,6 @@ module.exports = (sequelize, DataTypes) => {
 			},
 		},
 		{
-			sequelize,
-			modelName: 'User',
-		},
-		{
 			defaultScope: {
 				attributes: {
 					exclude: [
@@ -56,13 +52,15 @@ module.exports = (sequelize, DataTypes) => {
 					attributes: {},
 				},
 			},
+			sequelize,
+			modelName: 'User',
 		}
 	);
 
 	User.prototype.toSafeObject = function () {
 		// This CANNOT be an arrow function
-		const { id, username, email } = this; // context will be the User instance
-		return { id, username, email };
+		const { id, username } = this; // context will be the User instance
+		return { id, username };
 	};
 
 	User.prototype.validatePassword = function (password) {
