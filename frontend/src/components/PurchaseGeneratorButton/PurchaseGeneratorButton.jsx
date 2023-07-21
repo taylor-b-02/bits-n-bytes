@@ -1,5 +1,5 @@
 import {React} from 'react';
-import './PurchaseButton.css';
+import './PurchaseGeneratorButton.css';
 
 export default function PurchaseButton(props) {
     const {generator, currency, cost, onGeneratorBought} = props;

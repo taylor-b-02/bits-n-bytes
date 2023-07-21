@@ -1,6 +1,6 @@
 import { React } from "react";
 import "./Upgrade.css";
-import PurchaseButton from "../PurchaseButton/PurchaseButton";
+import PurchaseButton from "../PurchaseGeneratorButton/PurchaseGeneratorButton";
 import UpgradePhoto from "../UpgradePhoto/UpgradePhoto";
 
 export default function Upgrade() {
