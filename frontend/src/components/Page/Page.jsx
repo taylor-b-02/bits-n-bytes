@@ -4,6 +4,7 @@ import Header from "../Header/Header";
 import Generators from "../Generators/Generators";
 import Clicker from "../Clicker/Clicker";
 import Upgrades from "../Upgrades/Upgrades";
+import Gen from "../../GameLogic/Generator"
 
 //Modal imports
 import Modal from "react-modal";
@@ -11,6 +12,19 @@ import Modal from "react-modal";
 Modal.setAppElement("#root");
 
 export default function Page() {
+  const [currency, setCurrency] = useState(0);
+  const [clickValue, setClickValue] = useState(1);
+  const [clickMult, setClickMult] = useState(1);
+  const [generatorMult, setGeneratorMult] = useState(1);
+  const [globalMult, setGlobalMult] = useState(1);
+
+  let testGen = new Gen("test", 10, 1, 1, 1.1, 10);
+  console.log(testGen);
+  //Math before passing values to props
+  //calculate real click value after multipliers are applied
+
+
+
   const [modalIsOpen, modalSetIsOpen] = useState(true);
 
   function afterOpenModal() {
@@ -21,6 +35,7 @@ export default function Page() {
   function closeModal() {
     modalSetIsOpen(false);
   }
+
   return (
     <div className="page">
       <Modal
