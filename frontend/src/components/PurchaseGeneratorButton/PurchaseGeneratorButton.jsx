@@ -1,17 +1,16 @@
 import {React} from 'react';
 import './PurchaseGeneratorButton.css';
 
-export default function PurchaseButton(props) {
-    const {generator, currency, cost, onGeneratorBought} = props;
+export default function PurchaseGeneratorButton(props) {
+    const {generator, cost, onGeneratorBought} = props;
 
     function handleClick() {
-        console.log("Purchase button clicked")
         onGeneratorBought(generator);
     }
 
     return (
         <div className="purchase-button">
-            <button onClick={handleClick}>Purchase</button>
+            <button onClick={handleClick}>{Math.floor(cost)}</button>
         </div>
     );
 };

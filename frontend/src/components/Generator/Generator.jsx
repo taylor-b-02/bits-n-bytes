@@ -4,7 +4,7 @@ import GeneratorPhoto from "../GeneratorPhoto/GeneratorPhoto";
 import PurchaseButton from "../PurchaseGeneratorButton/PurchaseGeneratorButton";
 
 export default function Generator(props) {
-    const { generator, currency, onGeneratorBought } = props;
+    const { generator, onGeneratorBought } = props;
 
   return (
     <div className="generator">
@@ -15,7 +15,6 @@ export default function Generator(props) {
       </div>
       <PurchaseButton
         generator={generator} 
-        currency={currency}
         cost={generator.cost}
         onGeneratorBought={onGeneratorBought}
       />

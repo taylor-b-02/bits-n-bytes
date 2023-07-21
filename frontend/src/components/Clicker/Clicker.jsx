@@ -2,7 +2,7 @@ import {React} from 'react';
 import './Clicker.css';
 
 export default function Clicker(props) {
-    const { clickValue, onClick, clickMult, globalMult } = props;
+    const { clickValue, onClick } = props;
 
     function handleClick() {
         onClick();

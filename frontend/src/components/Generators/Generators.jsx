@@ -3,7 +3,7 @@ import './Generators.css';
 import Generator from '../Generator/Generator';
 
 export default function Generators(props) {
-    const {currency, generators, onGeneratorBought} = props;
+    const {generators, onGeneratorBought} = props;
     return (
         <div className="generators">
             {generators.map((generator) => {
@@ -11,7 +11,6 @@ export default function Generators(props) {
                     <Generator
                         key={generator.name}
                         generator={generator}
-                        currency={currency}
                         onGeneratorBought={onGeneratorBought}
                     />
                 );
