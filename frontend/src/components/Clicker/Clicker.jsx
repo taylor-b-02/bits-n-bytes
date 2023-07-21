@@ -1,10 +1,13 @@
 import {React} from 'react';
 import './Clicker.css';
 
-export default function Clicker() {
+export default function Clicker(props) {
+    const { clickValue, handleClick, clickMult, globalMult } = props;
+
+
     return (
         <div className="clicker">
-            <button>Please god click me...</button>
+            <button onClick={handleClick}>{clickValue}</button>
         </div>
     );
 }

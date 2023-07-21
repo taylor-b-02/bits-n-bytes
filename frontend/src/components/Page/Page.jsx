@@ -46,14 +46,19 @@ export default function Page() {
   const [generators, setGenerators] = useState([generator1, generator2, generator3, generator4, generator5, generator6, generator7, generator8]);
 
   
-  console.log(testGen);
+  console.log(generators);
   //Math before passing values to props
   //calculate real click value after multipliers are applied
-
   function calculateClickValue() {
     return clickValue * clickMult * globalMult;
   }
 
+
+  //called when clicker clicked
+  function handleClick() {
+    setCurrency(prevCurrency => prevCurrency + calculateClickValue());
+    console.log(currency);
+  }
 
   const [modalIsOpen, modalSetIsOpen] = useState(true);
 
@@ -91,8 +96,19 @@ export default function Page() {
         </div>
       </Modal>
       <Header />
-      <Generators />
-      <Clicker />
+      <Generators
+        currency={currency}
+        setCurrency={handleClick}
+        generators={generators}
+        setGenerators={setGenerators}
+
+      />
+      <Clicker 
+        currency={currency}
+        handleClick={handleClick}
+        clickValue={clickValue}
+        clickMult={clickMult}
+      />
       <Upgrades />
     </div>
   );
