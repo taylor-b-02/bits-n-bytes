@@ -18,7 +18,6 @@ export default function Page() {
   const [generatorMult, setGeneratorMult] = useState(1);
   const [globalMult, setGlobalMult] = useState(1);
   const [cpsRate, setCpsRate] = useState(0);
-  const [generators, setGenerators] = useState([]);
   //Data scenario: 
   //We will have an array of generators, each with their own properties
   //we will have an array of clickMults, with the resulting clickMult being the product of all of them
@@ -33,8 +32,20 @@ export default function Page() {
   //when upgrades are bought they are removed from the unpurchased array and added to the purchased array
   //when generators are bought they increase the count of their respective generator, affecting the cost of the next one
 
+  
 
-  let testGen = new Gen("test", 10, 1, 1, 1.1, 10);
+  //Defining the generators here
+  let generator1 = new Gen("Generator 1", 10, 1, 1, 1, 1, 1, 1, 1, 1);
+  let generator2 = new Gen("Generator 2", 100, 10, 1, 1, 1, 1, 1, 1, 1);
+  let generator3 = new Gen("Generator 3", 1000, 100, 1, 1, 1, 1, 1, 1, 1);
+  let generator4 = new Gen("Generator 4", 10000, 1000, 1, 1, 1, 1, 1, 1, 1);
+  let generator5 = new Gen("Generator 5", 100000, 10000, 1, 1, 1, 1, 1, 1, 1);
+  let generator6 = new Gen("Generator 6", 1000000, 100000, 1, 1, 1, 1, 1, 1, 1);
+  let generator7 = new Gen("Generator 7", 10000000, 1000000, 1, 1, 1, 1, 1, 1, 1);
+  let generator8 = new Gen("Generator 8", 100000000, 10000000, 1, 1, 1, 1, 1, 1, 1);
+  const [generators, setGenerators] = useState([generator1, generator2, generator3, generator4, generator5, generator6, generator7, generator8]);
+
+  
   console.log(testGen);
   //Math before passing values to props
   //calculate real click value after multipliers are applied
