@@ -17,12 +17,31 @@ export default function Page() {
   const [clickMult, setClickMult] = useState(1);
   const [generatorMult, setGeneratorMult] = useState(1);
   const [globalMult, setGlobalMult] = useState(1);
+  const [cpsRate, setCpsRate] = useState(0);
+  const [generators, setGenerators] = useState([]);
+  //Data scenario: 
+  //We will have an array of generators, each with their own properties
+  //we will have an array of clickMults, with the resulting clickMult being the product of all of them
+  //we will have an array of generatorMults, with the resulting generatorMult being the product of all of them
+  //we will have an array of globalMults, with the resulting globalMult being the product of all of them
+
+  //we will have an update function that runs every 1/10 seconds that updates the currency based on the rate,
+  //which is the sum of all the generators' rates, multiplied by the generatorMult and globalMult
+
+  //every click will add the clickValue * clickMult * globalMult to the currency
+
+  //when upgrades are bought they are removed from the unpurchased array and added to the purchased array
+  //when generators are bought they increase the count of their respective generator, affecting the cost of the next one
+
 
   let testGen = new Gen("test", 10, 1, 1, 1.1, 10);
   console.log(testGen);
   //Math before passing values to props
   //calculate real click value after multipliers are applied
 
+  function calculateClickValue() {
+    return clickValue * clickMult * globalMult;
+  }
 
 
   const [modalIsOpen, modalSetIsOpen] = useState(true);
