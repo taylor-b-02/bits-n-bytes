@@ -2,18 +2,20 @@ import {React} from 'react';
 import './Generators.css';
 import Generator from '../Generator/Generator';
 
-export default function Generators() {
+export default function Generators(props) {
+    const {currency, generators, onGeneratorBought} = props;
     return (
         <div className="generators">
-            <Generator></Generator>
-            <Generator></Generator>
-            <Generator></Generator>
-            <Generator></Generator>
-            <Generator></Generator>
-            <Generator></Generator>
-            <Generator></Generator>
-            <Generator></Generator>
-            <Generator></Generator>
+            {generators.map((generator) => {
+                return (
+                    <Generator
+                        key={generator.name}
+                        generator={generator}
+                        currency={currency}
+                        onGeneratorBought={onGeneratorBought}
+                    />
+                );
+            })}
         </div>
     );
 };

@@ -45,8 +45,28 @@ export default function Page() {
   let generator8 = new Gen("Generator 8", 100000000, 10000000, 1, 1, 1, 1, 1, 1, 1);
   const [generators, setGenerators] = useState([generator1, generator2, generator3, generator4, generator5, generator6, generator7, generator8]);
 
-  
-  console.log(generators);
+  //called when generator bought
+  function onGeneratorBought(generator) {
+    //check if currency is enough to buy generator
+    if (currency >= generator.cost) {
+      //subtract cost from currency
+      setCurrency(prevCurrency => prevCurrency - generator.cost);
+      //add generator to purchased generators
+      setGenerators(prevGenerators => prevGenerators.map((prevGenerator) => {
+        if (prevGenerator.name === generator.name) {
+          return {
+            ...prevGenerator,
+            count: prevGenerator.count + 1,
+            cost: prevGenerator.cost * 1.1,
+          };
+        } else {
+          return prevGenerator;
+        }
+      }));
+    }
+  }
+
+
   //Math before passing values to props
   //calculate real click value after multipliers are applied
   function calculateClickValue() {
@@ -55,9 +75,8 @@ export default function Page() {
 
 
   //called when clicker clicked
-  function handleClick() {
+  function onClick() {
     setCurrency(prevCurrency => prevCurrency + calculateClickValue());
-    console.log(currency);
   }
 
   const [modalIsOpen, modalSetIsOpen] = useState(true);
@@ -100,14 +119,12 @@ export default function Page() {
       />
       <Generators
         currency={currency}
-        setCurrency={handleClick}
         generators={generators}
-        setGenerators={setGenerators}
-
+        onGeneratorBought={onGeneratorBought}
       />
       <Clicker 
         currency={currency}
-        handleClick={handleClick}
+        onClick={onClick}
         clickValue={clickValue}
         clickMult={clickMult}
       />
