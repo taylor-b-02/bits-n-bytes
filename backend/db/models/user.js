@@ -33,6 +33,7 @@ module.exports = (sequelize, DataTypes) => {
 			},
 		},
 		{
+			// Excludes hashedPassword, createdAt, and updatedAt from standard requests d
 			defaultScope: {
 				attributes: {
 					exclude: [
@@ -43,11 +44,13 @@ module.exports = (sequelize, DataTypes) => {
 				},
 			},
 			scopes: {
+				// Excludes hashedPassword from requests made within this scope
 				currentUser: {
 					attributes: {
 						exclude: ['hashedPassword'],
 					},
 				},
+				// Neither includes nor excludes attributes - Default behavior
 				loginUser: {
 					attributes: {},
 				},
