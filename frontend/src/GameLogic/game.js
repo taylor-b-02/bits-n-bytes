@@ -6,11 +6,11 @@ export default function game(
   globalMult,
   handleCurrencyChange
 ) {
-  setInterval(() => {
     let sum = 0;
     generators.forEach((generator) => {
       sum += generator.baseValue * generator.count;
     });
     handleCurrencyChange(sum * generatorMult * globalMult);
-  }, rate*10);
+    sum = sum * rate;
+    return sum;
 }

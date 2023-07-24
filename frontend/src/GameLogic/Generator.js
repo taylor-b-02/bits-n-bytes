@@ -1,10 +1,35 @@
 export default class Gen {
-    constructor(name, cost, baseValue, baseCost, count) {
+    constructor(name, baseCost, baseValue, count) {
         this.name = name;
         this.baseCost = baseCost;
-        this.cost = cost;
+        this.cost = baseCost;
         this.baseValue = baseValue;
         this.count = count;
+    }
+
+    addGenerator() {
+        this.count++;
+        this.cost = Math.floor(this.baseCost * Math.pow(1.15, this.count));
+    }
+
+    getGenerator() {
+        return this.count;
+    }
+
+    getCost() {
+        return this.cost;
+    }
+
+    getBaseCost() {
+        return this.baseCost;
+    }
+
+    getBaseValue() {
+        return this.baseValue;
+    }
+
+    getValue() {
+        return this.baseValue * this.count;
     }
 }
 

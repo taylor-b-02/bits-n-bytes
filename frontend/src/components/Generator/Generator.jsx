@@ -1,7 +1,7 @@
 import { React } from "react";
 import "./Generator.css";
 import GeneratorPhoto from "../GeneratorPhoto/GeneratorPhoto";
-import PurchaseButton from "../PurchaseGeneratorButton/PurchaseGeneratorButton";
+import PurchaseGeneratorButton from "../PurchaseGeneratorButton/PurchaseGeneratorButton";
 
 export default function Generator(props) {
     const { generator, onGeneratorBought } = props;
@@ -11,11 +11,11 @@ export default function Generator(props) {
       <GeneratorPhoto />
       <div className="generator-container">
         <h3>{generator.name}</h3>
-        <p>{Math.floor(generator.cost)}</p>
+        <p>{Math.floor(generator.getValue())}</p>
       </div>
-      <PurchaseButton
+      <PurchaseGeneratorButton
         generator={generator} 
-        cost={generator.cost}
+        cost={generator.getCost()}
         onGeneratorBought={onGeneratorBought}
       />
     </div>
