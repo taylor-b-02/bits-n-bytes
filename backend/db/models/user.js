@@ -33,10 +33,7 @@ module.exports = (sequelize, DataTypes) => {
 			},
 		},
 		{
-			sequelize,
-			modelName: 'User',
-		},
-		{
+			// Excludes hashedPassword, createdAt, and updatedAt from standard requests d
 			defaultScope: {
 				attributes: {
 					exclude: [
@@ -47,22 +44,26 @@ module.exports = (sequelize, DataTypes) => {
 				},
 			},
 			scopes: {
+				// Excludes hashedPassword from requests made within this scope
 				currentUser: {
 					attributes: {
 						exclude: ['hashedPassword'],
 					},
 				},
+				// Neither includes nor excludes attributes - Default behavior
 				loginUser: {
 					attributes: {},
 				},
 			},
+			sequelize,
+			modelName: 'User',
 		}
 	);
 
 	User.prototype.toSafeObject = function () {
 		// This CANNOT be an arrow function
-		const { id, username, email } = this; // context will be the User instance
-		return { id, username, email };
+		const { id, username } = this; // context will be the User instance
+		return { id, username };
 	};
 
 	User.prototype.validatePassword = function (password) {

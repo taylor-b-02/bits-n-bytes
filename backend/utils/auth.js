@@ -6,12 +6,15 @@ const { secret, expiresIn } = jwtConfig;
 
 const setTokenCookie = (res, user) => {
 	// Create the token
+	console.log('USER TO SAFE OBJECT ', user.toSafeObject());
+	console.log('USER ', user);
 	const token = jwt.sign(
 		{ data: user.toSafeObject() },
 		secret,
 		{ expiresIn: parseInt(expiresIn) } // 604,800 seconds = 1 week
 	);
 
+	// Checks whether express is running in production or dev
 	const isProduction = process.env.NODE_ENV === 'production';
 
 	// Set the token cookie
@@ -47,3 +50,19 @@ const restoreUser = (req, res, next) => {
 		return next();
 	});
 };
+
+// If there is no current user, return an error
+const requireAuth = [
+	restoreUser,
+	function (req, res, next) {
+		if (req.user) return next();
+
+		const err = new Error('Unauthorized');
+		err.title = 'Unauthorized';
+		err.errors = ['Unauthorized'];
+		err.status = 401;
+		return next(err);
+	},
+];
+
+module.exports = { setTokenCookie, restoreUser, requireAuth };
