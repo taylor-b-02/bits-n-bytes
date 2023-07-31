@@ -9,7 +9,9 @@ export default function Generator(props) {
   return (
     <div className="generator">
       <div className="left">
-        <GeneratorPhoto />
+        <GeneratorPhoto 
+          generator={generator}
+        />
         <div className="generator-container">
           <h3>{generator.name}</h3>
           <p>{Math.floor(generator.getValue())} bytes</p>

@@ -56,14 +56,14 @@ function App() {
     return currency;
   }
 
-  let generator1 = new Gen(0, "A", 10, 1, 0);
-  let generator2 = new Gen(1, "B", 250, 10, 0);
-  let generator3 = new Gen(2, "C", 10 * thousand, 100, 0);
-  let generator4 = new Gen(3, "D", 250 * thousand, thousand, 0);
-  let generator5 = new Gen(4, "E", 10 * million, 10 * thousand, 0);
-  let generator6 = new Gen(5, "F", 25 * million, 100 * thousand, 0);
-  let generator7 = new Gen(6, "G", 10 * billion, million, 0);
-  let generator8 = new Gen(7, "H", 25 * billion, 10 * million, 0);
+  let generator1 = new Gen(0, "HTML", 10, 1, 0, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg");
+  let generator2 = new Gen(1, "CSS", 250, 10, 0, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg");
+  let generator3 = new Gen(2, "Javascript", 10 * thousand, 100, 0, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg");
+  let generator4 = new Gen(3, "PHP", 250 * thousand, thousand, 0, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg");
+  let generator5 = new Gen(4, "React", 10 * million, 10 * thousand, 0, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg");
+  let generator6 = new Gen(5, "Tailwind", 25 * million, 100 * thousand, 0, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg");
+  let generator7 = new Gen(6, "Angular", 10 * billion, million, 0, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg");
+  let generator8 = new Gen(7, "Svelte", 25 * billion, 10 * million, 0, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg");
 
   // eslint-disable-next-line
   const [generators, setGenerators] = useState([
