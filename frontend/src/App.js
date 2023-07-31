@@ -58,14 +58,14 @@ function App() {
     return currency;
   }
 
-  let generator1 = new Gen("A", 10, 1, 0);
-  let generator2 = new Gen("B", 100, 10, 0);
-  let generator3 = new Gen("C", 1000, 100, 0);
-  let generator4 = new Gen("D", 10000, 1000, 0);
-  let generator5 = new Gen("E", 100000, 10000, 0);
-  let generator6 = new Gen("F", 1000000, 100000, 0);
-  let generator7 = new Gen("G", 10000000, 1000000, 0);
-  let generator8 = new Gen("H", 100000000, 10000000, 0);
+  let generator1 = new Gen(0, "A", 10, 1, 0);
+  let generator2 = new Gen(1, "B", 100, 10, 0);
+  let generator3 = new Gen(2, "C", 1000, 100, 0);
+  let generator4 = new Gen(3, "D", 10000, 1000, 0);
+  let generator5 = new Gen(4, "E", 100000, 10000, 0);
+  let generator6 = new Gen(5, "F", 1000000, 100000, 0);
+  let generator7 = new Gen(6, "G", 10000000, 1000000, 0);
+  let generator8 = new Gen(7, "H", 100000000, 10000000, 0);
   const [generators, setGenerators] = useState([
     generator1,
     generator2,

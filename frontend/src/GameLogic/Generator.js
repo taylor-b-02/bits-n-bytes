@@ -1,5 +1,6 @@
 export default class Gen {
-    constructor(name, baseCost, baseValue, count) {
+    constructor(key, name, baseCost, baseValue, count) {
+        this.key = key;
         this.name = name;
         this.baseCost = baseCost;
         this.cost = baseCost;
