@@ -36,15 +36,9 @@ function App() {
     }
   }
 
-  //Math before passing values to props
-  //calculate real click value after multipliers are applied
-  function calculateClickValue() {
-    return clickValue * clickMult * globalMult;
-  }
-
   //called when clicker clicked
   function onClick() {
-    setCurrency((prevCurrency) => prevCurrency + calculateClickValue());
+    setCurrency((prevCurrency) => prevCurrency + clickValue);
   }
 
   function handleCurrencyChange(amount) {
@@ -97,6 +91,7 @@ function App() {
       //CLICK MULT
       if(upgradeBoughten.getType() === 0) {
         setClickMult((prevClickMult) => prevClickMult * upgradeBoughten.getMultiplier());
+        setClickValue((prevClickValue) => prevClickValue * upgradeBoughten.getMultiplier());
       } else if(upgradeBoughten.getType() === 1) {
         setGeneratorMult((prevGeneratorMult) => prevGeneratorMult * upgradeBoughten.getMultiplier());
       } else if(upgradeBoughten.getType() === 2) {
@@ -111,12 +106,14 @@ function App() {
   let upgrade1 = new UpgradeClass(0, "Click mult Upgrade", 10, "Increases the value of each click by 100%", 0, 2);
   let upgrade2 = new UpgradeClass(1, "Generator mult Upgrade", 100, "Increases the value of each click by 100%", 0, 2);
   let upgrade3 = new UpgradeClass(2, "Global mult Upgrade", 1000, "Increases the value of all cps by 200%", 0, 4);
+  let upgrade4 = new UpgradeClass(3, "Click mult Upgrade", 100, "Increases the value of each click by 100%", 0, 2);
 
   // eslint-disable-next-line
   const [upgrades, setUpgrades] = useState([
     upgrade1,
     upgrade2,
     upgrade3,
+    upgrade4,
   ]);
 
   return (

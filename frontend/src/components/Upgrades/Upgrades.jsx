@@ -7,6 +7,8 @@ export default function Upgrades(props) {
   return (
     <div className="upgrades">
       {upgrades.map((upgrade) => {
+        if(upgrade.owned) return null;
+        
         return (
           <Upgrade
             key={upgrade.key}
