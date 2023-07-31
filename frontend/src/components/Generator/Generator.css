@@ -3,10 +3,17 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     height: 100%;
     width: 100%;
     border-bottom: 1px solid var(--light-primary);
+}
+
+.left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
 }
 
 

@@ -14,9 +14,11 @@ export default function PurchaseGeneratorButton(props) {
     return formattedNumber;
   }
 
+
+
   return (
     <div className="purchase-button">
-      <button onClick={handleClick}>{generateCost()}</button>
+      <button onClick={handleClick} className="generator-button">{generateCost()}</button>
     </div>
   );
 }
