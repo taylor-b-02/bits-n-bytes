@@ -9,7 +9,7 @@ export default function Upgrades(props) {
       {upgrades.map((upgrade) => {
         return (
           <Upgrade
-            key={upgrade.name}
+            key={upgrade.key}
             upgrade={upgrade}
             onUpgradeBought={onUpgradeBought}
           />

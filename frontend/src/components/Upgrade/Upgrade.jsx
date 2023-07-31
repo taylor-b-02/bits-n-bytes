@@ -4,14 +4,20 @@ import PurchaseUpgradeButton from "../PurchaseUpgradeButton/PurchaseUpgradeButto
 import UpgradePhoto from "../UpgradePhoto/UpgradePhoto";
 
 export default function Upgrade(props) {
+  const { upgrade, onUpgradeBought } = props;
+
   return (
     <div className="upgrade">
       <UpgradePhoto />
       <div className="upgrade-container">
-        <h3>Upgrade Name</h3>
-        <p>Upgrade Description</p>
+        <h3>{upgrade.name}</h3>
+        <p>{upgrade.description}</p>
       </div>
-      <PurchaseUpgradeButton />
+      <PurchaseUpgradeButton 
+        upgrade={upgrade}
+        cost={upgrade.getCost()}
+        onUpgradeBought={onUpgradeBought}
+      />
     </div>
   );
 }

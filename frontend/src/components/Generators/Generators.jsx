@@ -9,7 +9,7 @@ export default function Generators(props) {
             {generators.map((generator) => {
                 return (
                     <Generator
-                        key={generator.name}
+                        key={generator.key}
                         generator={generator}
                         onGeneratorBought={onGeneratorBought}
                     />
