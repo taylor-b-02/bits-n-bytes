@@ -1,12 +1,9 @@
-import { React, useState, useEffect } from "react";
+import { React, useState } from "react";
 import "./Page.css";
 import Header from "../Header/Header";
 import Generators from "../Generators/Generators";
 import Clicker from "../Clicker/Clicker";
 import Upgrades from "../Upgrades/Upgrades";
-import Gen from "../../GameLogic/Generator";
-
-import game from "../../GameLogic/game";
 
 //Modal imports
 import Modal from "react-modal";

@@ -63,6 +63,8 @@ function App() {
   let generator6 = new Gen(5, "F", 1000000, 100000, 0);
   let generator7 = new Gen(6, "G", 10000000, 1000000, 0);
   let generator8 = new Gen(7, "H", 100000000, 10000000, 0);
+
+  // eslint-disable-next-line
   const [generators, setGenerators] = useState([
     generator1,
     generator2,
@@ -84,7 +86,7 @@ function App() {
     }, 100);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [generators, generatorMult, globalMult]);
 
   //UPGRADES
 
@@ -93,11 +95,11 @@ function App() {
       handleCurrencyChange(-upgradeBoughten.getCost());
       upgradeBoughten.buy();
       //CLICK MULT
-      if(upgradeBoughten.getType() == 0) {
+      if(upgradeBoughten.getType() === 0) {
         setClickMult((prevClickMult) => prevClickMult * upgradeBoughten.getMultiplier());
-      } else if(upgradeBoughten.getType() == 1) {
+      } else if(upgradeBoughten.getType() === 1) {
         setGeneratorMult((prevGeneratorMult) => prevGeneratorMult * upgradeBoughten.getMultiplier());
-      } else if(upgradeBoughten.getType() == 2) {
+      } else if(upgradeBoughten.getType() === 2) {
         setGlobalMult((prevGlobalMult) => prevGlobalMult * upgradeBoughten.getMultiplier());
       }
     }
@@ -110,6 +112,7 @@ function App() {
   let upgrade2 = new UpgradeClass(1, "Generator mult Upgrade", 100, "Increases the value of each click by 100%", 0, 2);
   let upgrade3 = new UpgradeClass(2, "Global mult Upgrade", 1000, "Increases the value of all cps by 200%", 0, 4);
 
+  // eslint-disable-next-line
   const [upgrades, setUpgrades] = useState([
     upgrade1,
     upgrade2,
