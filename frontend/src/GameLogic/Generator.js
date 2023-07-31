@@ -10,7 +10,7 @@ export default class Gen {
 
     addGenerator() {
         this.count++;
-        this.cost = Math.floor(this.baseCost * Math.pow(1.15, this.count));
+        this.cost = Math.floor(this.baseCost * Math.pow(1.25, this.count));
     }
 
     getGenerator() {

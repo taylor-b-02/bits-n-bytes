@@ -10,7 +10,7 @@ export default function game(
     generators.forEach((generator) => {
       sum += generator.baseValue * generator.count;
     });
-    handleCurrencyChange(sum * generatorMult * globalMult);
     sum = sum * rate;
+    handleCurrencyChange(sum * generatorMult * globalMult);
     return sum;
 }

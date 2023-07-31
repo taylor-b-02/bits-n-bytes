@@ -90,7 +90,7 @@ function App() {
       upgradeBoughten.buy();
       //CLICK MULT
       if(upgradeBoughten.getType() === 0) {
-        setClickMult((prevClickMult) => prevClickMult * upgradeBoughten.getMultiplier());
+        setClickMult(clickMult * upgradeBoughten.getMultiplier());
         setClickValue((prevClickValue) => prevClickValue * upgradeBoughten.getMultiplier());
       } else if(upgradeBoughten.getType() === 1) {
         setGeneratorMult((prevGeneratorMult) => prevGeneratorMult * upgradeBoughten.getMultiplier());
