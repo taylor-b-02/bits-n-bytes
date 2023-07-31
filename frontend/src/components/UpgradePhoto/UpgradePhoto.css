@@ -1,0 +1,11 @@
+.upgrade-photo {
+    aspect-ratio: 1/1;
+    width: 75px;
+    height: 75px;
+}
+
+.upgrade-photo img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }

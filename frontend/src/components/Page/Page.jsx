@@ -1,12 +1,9 @@
-import { React, useState, useEffect } from "react";
+import { React, useState } from "react";
 import "./Page.css";
 import Header from "../Header/Header";
 import Generators from "../Generators/Generators";
 import Clicker from "../Clicker/Clicker";
 import Upgrades from "../Upgrades/Upgrades";
-import Gen from "../../GameLogic/Generator";
-
-import game from "../../GameLogic/game";
 
 //Modal imports
 import Modal from "react-modal";
@@ -14,9 +11,8 @@ import Modal from "react-modal";
 Modal.setAppElement("#root");
 
 export default function Page(props) {
-  const {generators, onGeneratorBought, currency, onClick, clickValue} = props;
+  const {generators, onGeneratorBought, upgrades, onUpgradeBought, currency, onClick, clickValue, ratePerSecond} = props;
   
-
 
   //Modal logic 
   const [modalIsOpen, modalSetIsOpen] = useState(true);
@@ -56,7 +52,7 @@ export default function Page(props) {
           </form>
         </div>
       </Modal>
-      <Header currency={currency} />
+      <Header currency={currency} ratePerSecond={ratePerSecond} />
       <Generators
         currency={currency}
         generators={generators}
@@ -67,7 +63,11 @@ export default function Page(props) {
         onClick={onClick}
         clickValue={clickValue}
       />
-      <Upgrades />
+      <Upgrades 
+        currency={currency}
+        upgrades={upgrades}
+        onUpgradeBought={onUpgradeBought}
+      />
     </div>
   );
 }

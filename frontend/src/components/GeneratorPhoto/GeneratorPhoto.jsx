@@ -1,10 +1,13 @@
 import {React} from 'react';
+import './GeneratorPhoto.css';
 
 
-export default function GeneratorPhoto() {
+export default function GeneratorPhoto(props) {
+    const { generator } = props;
+
     return (
         <div className="generator-photo">
-            <img src="https://via.placeholder.com/150" alt="generator"/>
+            <img src={generator.URL} alt="html" />
         </div>
     );
 };

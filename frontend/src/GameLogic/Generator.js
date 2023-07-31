@@ -1,15 +1,17 @@
 export default class Gen {
-    constructor(name, baseCost, baseValue, count) {
+    constructor(key, name, baseCost, baseValue, count, url) {
+        this.key = key;
         this.name = name;
         this.baseCost = baseCost;
         this.cost = baseCost;
         this.baseValue = baseValue;
         this.count = count;
+        this.URL = url;
     }
 
     addGenerator() {
         this.count++;
-        this.cost = Math.floor(this.baseCost * Math.pow(1.15, this.count));
+        this.cost = Math.floor(this.baseCost * Math.pow(1.25, this.count));
     }
 
     getGenerator() {

@@ -8,6 +8,7 @@
   overflow-y: auto;
   width: 97%;
   height: 97%;
+  margin-left: 10px;
 }
 
 .generators::-webkit-scrollbar {
