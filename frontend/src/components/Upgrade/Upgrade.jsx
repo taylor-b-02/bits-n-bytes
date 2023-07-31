@@ -9,7 +9,9 @@ export default function Upgrade(props) {
   return (
     <div className="upgrade">
       <div className="right">
-        <UpgradePhoto />
+        <UpgradePhoto 
+          type={upgrade.getType()}
+        />
         <div className="upgrade-container">
           <h3>{upgrade.name}</h3>
           <p>{upgrade.description}</p>

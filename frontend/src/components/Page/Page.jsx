@@ -11,7 +11,7 @@ import Modal from "react-modal";
 Modal.setAppElement("#root");
 
 export default function Page(props) {
-  const {generators, onGeneratorBought, upgrades, onUpgradeBought, currency, onClick, clickValue} = props;
+  const {generators, onGeneratorBought, upgrades, onUpgradeBought, currency, onClick, clickValue, ratePerSecond} = props;
   
 
   //Modal logic 
@@ -52,7 +52,7 @@ export default function Page(props) {
           </form>
         </div>
       </Modal>
-      <Header currency={currency} />
+      <Header currency={currency} ratePerSecond={ratePerSecond} />
       <Generators
         currency={currency}
         generators={generators}

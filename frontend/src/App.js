@@ -18,6 +18,7 @@ function App() {
   const [clickMult, setClickMult] = useState(1);
   const [generatorMult, setGeneratorMult] = useState(1);
   const [globalMult, setGlobalMult] = useState(1);
+  const [ratePerSecond, setRatePerSecond] = useState(0);
   //Data scenario:
   //We will have an array of generators, each with their own properties
   //we will have an array of clickMults, with the resulting clickMult being the product of all of them
@@ -83,7 +84,7 @@ function App() {
   useEffect(() => {
     let interval = setInterval(() => {
       //first value is freq. of interval
-      game(0.1, generators, generatorMult, globalMult, handleCurrencyChange);
+      game(0.1, generators, generatorMult, globalMult, handleCurrencyChange, setRatePerSecond);
     }, 100);
 
     return () => clearInterval(interval);
@@ -111,9 +112,15 @@ function App() {
   //creating the upgrades
   //key, name, cost, description, type, multiplier
   let upgrade1 = new UpgradeClass(0, "Click mult Upgrade", 10, "Increases the value of each click by 100%", 0, 2);
-  let upgrade2 = new UpgradeClass(1, "Generator mult Upgrade", 100, "Increases the value of each click by 100%", 0, 2);
-  let upgrade3 = new UpgradeClass(2, "Global mult Upgrade", 1000, "Increases the value of all cps by 200%", 0, 4);
-  let upgrade4 = new UpgradeClass(3, "Click mult Upgrade", 100, "Increases the value of each click by 100%", 0, 2);
+  let upgrade2 = new UpgradeClass(1, "Generator mult Upgrade", 100, "Increases the value of each Generator by 100%", 1, 2);
+  let upgrade3 = new UpgradeClass(2, "Global mult Upgrade", 250, "Increases the value of all cps by 200%", 2, 4);
+  let upgrade4 = new UpgradeClass(3, "Click mult Upgrade", thousand, "Increases the value of each click by 100%", 0, 2);
+  let upgrade5 = new UpgradeClass(5, "Generator mult Upgrade", 25 * thousand, "Increases the value of each Generator by 100%", 1, 2);
+  let upgrade6 = new UpgradeClass(6, "Global mult Upgrade", 250 * thousand, "Increases the value of all cps by 200%", 2, 4);
+  let upgrade7 = new UpgradeClass(7, "Click mult Upgrade", 5 * million, "Increases the value of each click by 100%", 0, 2);
+let upgrade8 = new UpgradeClass(8, "Generator mult Upgrade", 50 * million, "Increases the value of each Generator by 100%", 1, 2);
+let upgrade9 = new UpgradeClass(9, "Global mult Upgrade", 100 * million, "Increases the value of all cps by 200%", 2, 4);
+let upgrade10 = new UpgradeClass(10, "Click mult Upgrade", 1 * billion, "Increases the value of each click by 100%", 0, 2);
 
   // eslint-disable-next-line
   const [upgrades, setUpgrades] = useState([
@@ -121,6 +128,12 @@ function App() {
     upgrade2,
     upgrade3,
     upgrade4,
+    upgrade5,
+    upgrade6,
+    upgrade7,
+    upgrade8,
+    upgrade9,
+    upgrade10,
   ]);
 
   return (
@@ -133,6 +146,7 @@ function App() {
         currency={currency}
         onClick={onClick}
         clickValue={clickValue}
+        ratePerSecond={ratePerSecond}
       />
     </div>
   );
