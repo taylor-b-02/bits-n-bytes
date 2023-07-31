@@ -11,9 +11,9 @@ export default function game(
     generators.forEach((generator) => {
       sum += generator.baseValue * generator.count;
     });
-    sum = sum * rate;
+    sum = sum * generatorMult * globalMult;
     console.log(sum);
     setRatePerSecond(sum);
-    handleCurrencyChange(sum * generatorMult * globalMult);
+    handleCurrencyChange(sum * rate);
     return sum;
 }
