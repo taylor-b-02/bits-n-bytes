@@ -5,7 +5,7 @@ export default function Currency(props) {
     const { currency } = props;
     return (
         <div className="currency">
-            <h2 className="amount">{currency} bytes</h2>
+            <h2 className="amount">{Math.floor(currency)} bytes</h2>
         </div>
     );
 }
