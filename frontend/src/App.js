@@ -5,6 +5,13 @@ import Gen from "./GameLogic/Generator";
 import game from "./GameLogic/game";
 import UpgradeClass from "./GameLogic/upgrade";
 
+const thousand = 1000;
+const million = 1000000;
+const billion = 1000000000;
+// let trillion = 1000000000000;
+// let quadrillion = 1000000000000000;
+
+
 function App() {
   const [currency, setCurrency] = useState(0);
   const [clickValue, setClickValue] = useState(1);
@@ -51,12 +58,12 @@ function App() {
 
   let generator1 = new Gen(0, "A", 10, 1, 0);
   let generator2 = new Gen(1, "B", 250, 10, 0);
-  let generator3 = new Gen(2, "C", 10000, 100, 0);
-  let generator4 = new Gen(3, "D", 250000, 1000, 0);
-  let generator5 = new Gen(4, "E", 10000000, 10000, 0);
-  let generator6 = new Gen(5, "F", 1000000, 100000, 0);
-  let generator7 = new Gen(6, "G", 10000000, 1000000, 0);
-  let generator8 = new Gen(7, "H", 100000000, 10000000, 0);
+  let generator3 = new Gen(2, "C", 10 * thousand, 100, 0);
+  let generator4 = new Gen(3, "D", 250 * thousand, thousand, 0);
+  let generator5 = new Gen(4, "E", 10 * million, 10 * thousand, 0);
+  let generator6 = new Gen(5, "F", 25 * million, 100 * thousand, 0);
+  let generator7 = new Gen(6, "G", 10 * billion, million, 0);
+  let generator8 = new Gen(7, "H", 25 * billion, 10 * million, 0);
 
   // eslint-disable-next-line
   const [generators, setGenerators] = useState([
