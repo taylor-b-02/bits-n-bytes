@@ -11,7 +11,7 @@ export default function Generator(props) {
       <GeneratorPhoto />
       <div className="generator-container">
         <h3>{generator.name}</h3>
-        <p>{Math.floor(generator.getValue())}</p>
+        <p>{Math.floor(generator.getValue())} bytes</p>
       </div>
       <PurchaseGeneratorButton
         generator={generator} 
