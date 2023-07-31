@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import './App.css';
-import Page from './components/Page/Page';
-import Gen from './GameLogic/Generator';
-import game from './GameLogic/game';
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import Page from "./components/Page/Page";
+import Gen from "./GameLogic/Generator";
+import game from "./GameLogic/game";
+import UpgradeClass from "./GameLogic/upgrade";
 
 function App() {
-
-
   const [currency, setCurrency] = useState(0);
   const [clickValue, setClickValue] = useState(1);
   const [clickMult, setClickMult] = useState(1);
@@ -28,13 +27,12 @@ function App() {
 
   //Defining the generators here
   //name, baseCost, baseValue, count
-  
 
   //called when generator bought
-  function onGeneratorBought(generatorZ) {
-    if(generatorZ.getCost() <= getCurrency()) {
-      handleCurrencyChange(-generatorZ.getCost());
-      generatorZ.addGenerator();
+  function onGeneratorBought(generatorBoughten) {
+    if (generatorBoughten.getCost() <= getCurrency()) {
+      handleCurrencyChange(-generatorBoughten.getCost());
+      generatorBoughten.addGenerator();
     }
   }
 
@@ -43,7 +41,6 @@ function App() {
   function calculateClickValue() {
     return clickValue * clickMult * globalMult;
   }
-
 
   //called when clicker clicked
   function onClick() {
@@ -78,6 +75,8 @@ function App() {
   ]);
 
 
+
+  //handles game logic and updates currency based on generators owned and their rates + multipliers
   useEffect(() => {
     let interval = setInterval(() => {
       //first value is freq. of interval
@@ -87,9 +86,47 @@ function App() {
     return () => clearInterval(interval);
   }, []);
 
+  //UPGRADES
+
+  function onUpgradeBought(upgradeBoughten) {
+    if (upgradeBoughten.getCost() <= getCurrency()) {
+      handleCurrencyChange(-upgradeBoughten.getCost());
+      upgradeBoughten.buy();
+      //CLICK MULT
+      if(upgradeBoughten.getType() == 0) {
+        setClickMult((prevClickMult) => prevClickMult * upgradeBoughten.getMultiplier());
+      } else if(upgradeBoughten.getType() == 1) {
+        setGeneratorMult((prevGeneratorMult) => prevGeneratorMult * upgradeBoughten.getMultiplier());
+      } else if(upgradeBoughten.getType() == 2) {
+        setGlobalMult((prevGlobalMult) => prevGlobalMult * upgradeBoughten.getMultiplier());
+      }
+    }
+  }
+
+
+  //creating the upgrades
+  //key, name, cost, description, type, multiplier
+  let upgrade1 = new UpgradeClass(0, "Click mult Upgrade", 10, "Increases the value of each click by 100%", 0, 2);
+  let upgrade2 = new UpgradeClass(1, "Generator mult Upgrade", 100, "Increases the value of each click by 100%", 0, 2);
+  let upgrade3 = new UpgradeClass(2, "Global mult Upgrade", 1000, "Increases the value of all cps by 200%", 0, 4);
+
+  const [upgrades, setUpgrades] = useState([
+    upgrade1,
+    upgrade2,
+    upgrade3,
+  ]);
+
   return (
     <div>
-      <Page generators={generators} onGeneratorBought={onGeneratorBought} currency={currency} onClick={onClick} clickValue={clickValue}/>
+      <Page
+        generators={generators}
+        onGeneratorBought={onGeneratorBought}
+        upgrades={upgrades}
+        onUpgradeBought={onUpgradeBought}
+        currency={currency}
+        onClick={onClick}
+        clickValue={clickValue}
+      />
     </div>
   );
 }
