@@ -3,7 +3,7 @@ import "./Upgrade.css";
 import PurchaseUpgradeButton from "../PurchaseUpgradeButton/PurchaseUpgradeButton";
 import UpgradePhoto from "../UpgradePhoto/UpgradePhoto";
 
-export default function Upgrade() {
+export default function Upgrade(props) {
   return (
     <div className="upgrade">
       <UpgradePhoto />

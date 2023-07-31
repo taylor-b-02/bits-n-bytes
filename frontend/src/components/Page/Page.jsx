@@ -14,9 +14,8 @@ import Modal from "react-modal";
 Modal.setAppElement("#root");
 
 export default function Page(props) {
-  const {generators, onGeneratorBought, currency, onClick, clickValue} = props;
+  const {generators, onGeneratorBought, upgrades, onUpgradeBought, currency, onClick, clickValue} = props;
   
-
 
   //Modal logic 
   const [modalIsOpen, modalSetIsOpen] = useState(true);
@@ -67,7 +66,11 @@ export default function Page(props) {
         onClick={onClick}
         clickValue={clickValue}
       />
-      <Upgrades />
+      <Upgrades 
+        currency={currency}
+        upgrades={upgrades}
+        onUpgradeBought={onUpgradeBought}
+      />
     </div>
   );
 }
