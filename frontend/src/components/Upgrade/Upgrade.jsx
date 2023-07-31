@@ -8,12 +8,14 @@ export default function Upgrade(props) {
 
   return (
     <div className="upgrade">
-      <UpgradePhoto />
-      <div className="upgrade-container">
-        <h3>{upgrade.name}</h3>
-        <p>{upgrade.description}</p>
+      <div className="right">
+        <UpgradePhoto />
+        <div className="upgrade-container">
+          <h3>{upgrade.name}</h3>
+          <p>{upgrade.description}</p>
+        </div>
       </div>
-      <PurchaseUpgradeButton 
+      <PurchaseUpgradeButton
         upgrade={upgrade}
         cost={upgrade.getCost()}
         onUpgradeBought={onUpgradeBought}

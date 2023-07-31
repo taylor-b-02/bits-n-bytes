@@ -9,7 +9,7 @@ export default function PurchaseButton(props) {
     }
     return (
         <div className="purchase-button">
-            <button onClick={handleClick}>{Math.floor(cost)}</button>
+            <button onClick={handleClick} className='upgrade-button'>{Math.floor(cost)}</button>
         </div>
     );
 };
