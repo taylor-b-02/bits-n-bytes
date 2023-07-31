@@ -1,6 +1,6 @@
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import Page from './components/Page/Page';
-import { useEffect, useState } from 'react';
 import Gen from './GameLogic/Generator';
 import game from './GameLogic/game';
 
